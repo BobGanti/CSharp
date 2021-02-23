@@ -31,14 +31,31 @@ namespace CodingInterview
         }
     }
 
+    public class AddTwoNumbers
+    {
+        public static string Question() 
+        {
+            return
+            "You are given two non-empty linked lists representing two non-negative integers. " +
+           "The digits are stored in reverse order, and each of their nodes contains a single digit. " +
+           "Add the two numbers and return the sum as a linked list. \n " +
+           "You may assume the two numbers do not contain any leading zero, except the number 0 itself.";
+        }
+    }
+
     class Program
     {
+        //public static void Main(string[] args)
+        //{
+        //    string[] names1 = new string[] { "Ava", "Emma", "Olivia", "Olivia" , "Ava", "Olivia" };
+        //    string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
+        //    Console.WriteLine(string.Join(", ", MergeNames.UniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
+
+        //}
+
         public static void Main(string[] args)
         {
-            string[] names1 = new string[] { "Ava", "Emma", "Olivia", "Olivia" , "Ava", "Olivia" };
-            string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
-            Console.WriteLine(string.Join(", ", MergeNames.UniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
-
+            Console.WriteLine(AddTwoNumbers.Question());
         }
     }
 
