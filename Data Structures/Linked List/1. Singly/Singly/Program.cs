@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Singly
 {
@@ -73,7 +74,7 @@ namespace Singly
             if (IsEmptyList())
                 return;
 
-            if(head.data == dataAfter)
+            if (head.data == dataAfter)
             {
                 AddFirst(data);
             }
@@ -105,13 +106,13 @@ namespace Singly
                 Node newNode = new Node(data);
                 head.next = newNode;
                 newNode.next = null;
-                tail = newNode;             
+                tail = newNode;
             }
             else
             {
                 Node current = head;
                 var newNode = new Node(data);
-                while(current != null)
+                while (current != null)
                 {
                     if (current.data.Equals(dataBefore))
                     {
@@ -126,7 +127,7 @@ namespace Singly
 
         public void RemoveFirst()
         {
-            if(head == tail)
+            if (head == tail)
                 head = tail = null;
             else
             {
@@ -151,20 +152,20 @@ namespace Singly
         // Removes data from unknow position
         public void RemoveData(int data)
         {
-            if(head == tail && head.data == data)
+            if (head == tail && head.data == data)
                 RemoveFirst();
             else
             {
-                if(tail.data == data)
+                if (tail.data == data)
                 {
                     RemoveLast();
                 }
                 else
                 {
                     Node current = head;
-                    while(current != null)
+                    while (current != null)
                     {
-                        if(current.data == data)
+                        if (current.data == data)
                         {
                             break;
                         }
@@ -184,22 +185,22 @@ namespace Singly
             var dict = new Dictionary<int, int>();
             Node p1 = head;
             Node p2 = null;
-            while(p1 != null)
+            while (p1 != null)
             {
                 p2 = p1.next;
-                while(p2 != null)
+                while (p2 != null)
                 {
                     if (p1.data + p2.data == target)
                     {
                         dict.Add(p1.data, p2.data);
                     }
                     p2 = p2.next;
-                }            
+                }
                 p1 = p1.next;
             }
-            foreach(KeyValuePair<int, int> pair in dict)
-            {      
-                Console.WriteLine("({0}, {1})", pair.Key, pair.Value); 
+            foreach (KeyValuePair<int, int> pair in dict)
+            {
+                Console.WriteLine("({0}, {1})", pair.Key, pair.Value);
             }
         }
 
@@ -208,9 +209,9 @@ namespace Singly
         {
             int index = 0;
             var curr = head;
-            while(curr != null)
+            while (curr != null)
             {
-                if(curr.data == data)
+                if (curr.data == data)
                     return index;
                 curr = curr.next;
                 index++;
@@ -222,7 +223,7 @@ namespace Singly
         {
             int count = 0;
             Node curr = head;
-            while(curr != null)
+            while (curr != null)
             {
                 count++;
                 curr = curr.next;
@@ -281,4 +282,3 @@ namespace Singly
         }
     }
 }
-
