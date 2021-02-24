@@ -11,10 +11,11 @@ namespace CodingInterview
         {
             //MergeNames.Print();
 
-            Console.WriteLine(LongestSubstring.LengthOfLongestSubstring("abcabcbb"));
+            //Console.WriteLine(LongestSubstring.LengthOfLongestSubstring("abcabcbb"));
 
-            Console.WriteLine(LongestSubstring.Contraints()[2]);
-
+            int[] nums1 = { 1, 3 };
+            int[] nums2 = { 2 };
+            Console.WriteLine(new MeadianOfTwoSortedArrays().FindMedianSortedArrays(nums1, nums2));
         }
 
     }

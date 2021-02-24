@@ -7,33 +7,9 @@ namespace CodingInterview
 {
     public class LongestSubstring
     {
-        public static string Title = "Longest Substring";
-
-        public string Description = "Longest Substring Without Repeating Characters" +
-                "Given a string s, find the length of the longest substring without repeating characters.";
-        
-        private static Dictionary<int, string> examples;
-
-        private static Dictionary<int, string> constraints;
-
-        public static Dictionary<int, string> Examples()
-        {
-            examples = new Dictionary<int, string>();
-            examples.Add(1, "");
-            examples.Add(2, "");
-            examples.Add(3, "");
-
-            return examples;
-        }
-
-        public static Dictionary<int, string> Contraints()
-        {
-            constraints = new Dictionary<int, string>();
-            constraints.Add(1, "0 <= s.length <= 5 * 10**4");
-            constraints.Add(2, "s consists of English letters, digits, symbols and spaces Accepted");
-
-            return constraints;
-        }
+        //TITLE: Longest Substring.
+        //DESCRIPTION: Longest Substring Without Repeating Characters. 
+        //Given a string s, find the length of the longest substring without repeating characters.
 
         public static int LengthOfLongestSubstring(string s)
         {
