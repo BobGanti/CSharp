@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingInterview
 {
-    public class MeadianOfTwoSortedArrays
+    public class MedianOfTwoSortedArrays
     {
         /*
          * Given two sorted arrays nums1 and nums2 of size m and n respectively, 

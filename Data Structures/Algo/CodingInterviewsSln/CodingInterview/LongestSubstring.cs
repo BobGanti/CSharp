@@ -13,26 +13,26 @@ namespace CodingInterview
 
         public static int LengthOfLongestSubstring(string s)
         {
-            int starting = 0;
-            int maxlength = 0;
+            int index = 0;
+            int letterCount = 0;
+            int maxLengthSubstring = 0;
             Dictionary<char, int> seenDict = new Dictionary<char, int>();
 
-            int index = 0;
             foreach (char c in s)
             {
-                if (seenDict.ContainsKey(c) && starting <= seenDict[c])
+                if (seenDict.ContainsKey(c) && letterCount <= seenDict[c])
                 {
-                    starting = seenDict[c] + 1;
+                    letterCount = seenDict[c] + 1;
                 }
                 else
                 {
-                    List<int> list = new List<int>() { maxlength, index - starting + 1 };
-                    maxlength = list.Max();
+                    List<int> list = new List<int>() { maxLengthSubstring, index - letterCount + 1 };
+                    maxLengthSubstring = list.Max();
                 }
                 seenDict[c] = index;
                 index++;
             }
-            return maxlength;
+            return maxLengthSubstring;
         }
     }
 }

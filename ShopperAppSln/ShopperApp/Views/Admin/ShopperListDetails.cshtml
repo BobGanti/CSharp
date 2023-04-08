@@ -1,0 +1,42 @@
+﻿@model ShopperApp.Models.ShopperList
+
+@{
+    ViewBag.Title = "ShopperList Details";
+}
+
+<h2>@TempData["shopname"]</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShopId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShopId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+    </dl>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditShopperList", new { id = Model.ListId }) |
+    @Html.ActionLink("Back to List", "ShopperLists")
+</p>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ShopperApp.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Add New User", "AddUser")
+</p>
+<table class="table table-bordered table-striped table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditUser", new { id = item.Id }) |
+                @Html.ActionLink("Details", "UserDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteUser", new { id = item.Id }, new { @class = "delete" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts
+{
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+
+           /* confirm page deletion */
+            $("a.delete").click(function () {
+                if (!confirm("Do you want to delete this user?")) {
+                    return false;
+                }
+
+            });
+        /* ************************************** */
+
+        });
+      
+
+    </script>
+}

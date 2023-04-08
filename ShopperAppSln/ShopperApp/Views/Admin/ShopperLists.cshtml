@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ShopperApp.Models.ViewModels.ShopperListVM>
+
+@{
+    ViewBag.Title = "ShopperLists";
+}
+
+<h2>ShopperLists</h2>
+
+<p>
+    @Html.ActionLink("Create New List", "CreateList")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ListId)
+        </th>
+        <th>
+            Shop Name
+        </th>
+        <th>
+            User
+        </th>
+        <th>
+            Date Created
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShopName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditShopperList", new { id=item.ListId }) |
+            @Html.ActionLink("Details", "ShopperListDetails", new { id = item.ListId }) |
+            @Html.ActionLink("Delete", "DeleteShopperList", new { id = item.ListId })
+        </td>
+    </tr>
+}
+
+</table>

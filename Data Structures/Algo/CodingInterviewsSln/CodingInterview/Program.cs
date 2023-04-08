@@ -13,9 +13,10 @@ namespace CodingInterview
 
             //Console.WriteLine(LongestSubstring.LengthOfLongestSubstring("abcabcbb"));
 
-            int[] nums1 = { 1, 3 };
-            int[] nums2 = { 2 };
-            Console.WriteLine(new MeadianOfTwoSortedArrays().FindMedianSortedArrays(nums1, nums2));
+            //int[] nums1 = { 1, 3, 4 };
+            //int[] nums2 = { 2 };
+            //Console.WriteLine(new MedianOfTwoSortedArrays().FindMedianSortedArrays(nums1, nums2));
+           
         }
 
     }

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ShopperApp.Models.Shop>
+
+@{
+    ViewBag.Title = "Shops";
+}
+
+<h2>Shops</h2>
+
+<p>
+    @Html.ActionLink("Add New Shop", "AddShop")
+</p>
+<table class="table table-bordered table-striped table-hover table-responsive table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditShop", new { id=item.Id }) |
+            @Html.ActionLink("Details", "ShopDetails", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteShop", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

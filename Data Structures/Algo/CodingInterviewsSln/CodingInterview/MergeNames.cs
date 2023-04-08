@@ -9,6 +9,7 @@ namespace CodingInterview
         {
             List<string> newNames = new List<string>();
             List<string> seenlist = new List<string>();
+            
             foreach (string name1 in names1)
             {
                 if (!seenlist.Contains(name1))
